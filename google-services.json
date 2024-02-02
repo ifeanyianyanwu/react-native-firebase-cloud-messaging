@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "574252660014",
+    "project_id": "fir-pubsub-35133",
+    "storage_bucket": "fir-pubsub-35133.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574252660014:android:05c599c2dc6a2f1e41f6bf",
+        "android_client_info": {
+          "package_name": "com.ifeanyianyanwu.FCMReactNative"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7Zvp4AW4MaB5cSrp83wNRGcd2lYtbdxI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
