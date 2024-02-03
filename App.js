@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import messaging from "@react-native-firebase/messaging";
 import { Alert } from "react-native";
 import { AppRegistry } from "react-native";
@@ -66,7 +66,3 @@ messaging().setBackgroundMessageHandler(async (remoteMessage) => {
 });
 
 AppRegistry.registerComponent("app", () => App);
-
-// messaging()
-//   .subscribeToTopic('weather')
-//   .then(() => console.log('Subscribed to topic!'));
