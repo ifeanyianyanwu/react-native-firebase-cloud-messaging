@@ -7,30 +7,9 @@ import { AppRegistry } from "react-native";
 import Button from "./components/button";
 
 export default function App() {
-  const requestUserPermission = async () => {
-    const authStatus = await messaging().requestPermission();
-    const enabled =
-      authStatus === messaging.AuthorizationStatus.AUTHORIZED ||
-      authStatus === messaging.AuthorizationStatus.PROVISIONAL;
-
-    if (enabled) {
-      console.log("Authorization status:", authStatus);
-    }
-  };
-
   useEffect(() => {
-    if (requestUserPermission()) {
-      messaging()
-        .getToken()
-        .then((token) => {
-          console.log(token);
-        });
-    } else {
-      console.log("Failed to get token");
-    }
-
     const unsubscribe = messaging().onMessage(async (remoteMessage) => {
-      Alert.alert("A new FCM message arrived!", JSON.stringify(remoteMessage));
+      Alert.alert("A new message arrived!", JSON.stringify(remoteMessage));
     });
 
     return unsubscribe;
@@ -39,11 +18,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Button
-        label={"test button"}
+        label={"Suscribe to weather"}
         onPress={() =>
           messaging()
             .subscribeToTopic("weather")
-            .then(() => alert("Subscribed to topic!"))
+            .then(() => alert("Subscribed to weather topic!"))
         }
       />
       <StatusBar style="auto" />
